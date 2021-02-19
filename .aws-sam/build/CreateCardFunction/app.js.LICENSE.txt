@@ -1,0 +1,13 @@
+/*
+ * This module provides a simplified interface into the Aurora Serverless
+ * Data API by abstracting away the notion of field values.
+ *
+ * More detail regarding the Aurora Serverless Data APIcan be found here:
+ * https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html
+ *
+ * @author Jeremy Daly <jeremy@jeremydaly.com>
+ * @version 1.2.0
+ * @license MIT
+ */
+
+/*! http://mths.be/fromcodepoint v0.1.0 by @mathias */
