@@ -13,7 +13,7 @@
   "scripts": {
     "test": "mocha tests/unit/",
     "build": "webpack-cli",
-    "local-start": "npm run build&&sam local start-api --template ./.aws-sam/build/template.yaml"
+    "local-start": "npm run build && sam local start-api --docker-network database --template ./.aws-sam/build/template.yaml"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.72",

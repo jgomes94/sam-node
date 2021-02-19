@@ -14,6 +14,8 @@ services:
       SECRET_ARN: 'arn:aws:secretsmanager:us-east-1:1234567890:secret:dummy'
     ports:
       - "8080:80"
+    networks:
+      - database
   db:
     image: mysql:5.7
     command: --default-authentication-plugin=mysql_native_password
@@ -23,3 +25,9 @@ services:
       MYSQL_DATABASE: test
     ports:
       - "3306:3306"
+    networks:
+      - database
+
+networks:
+  database:
+    name: database
