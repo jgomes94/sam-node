@@ -57,13 +57,13 @@ Resources:
   CreateCardFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: lambdas/create-card/
+      CodeUri: lambdas/create-card
       Handler: app.lambdaHandler
       Runtime: nodejs12.x
       Timeout: 15
       Events:
         HelloWorld:
-          Type: HttpApi 
+          Type: HttpApi
           Properties:
             ApiId: !Ref BoardHttpApi
             Path: /cards

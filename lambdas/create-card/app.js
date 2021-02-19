@@ -1,15 +1,17 @@
+const client = require('data-api-client');
+
 exports.lambdaHandler = async (event, context) => {
     let result = '';
     try {
         console.log('connecting...');
-        const data = await require('data-api-client')({
+        const data = await client({
             secretArn: 'arn:aws:secretsmanager:us-east-1:1234567890:secret:dummy',
             resourceArn: 'arn:aws:rds:us-east-1:1234567890:cluster:dummy',
             database: 'test',
             region: 'us-east-1',
-            endpoint: 'http://127.0.0.1:8080',
+            endpoint: 'http://local-data-api:80',
             options: {
-                endpoint: 'http://127.0.0.1:8080',
+                endpoint: 'http://local-data-api:80',
             }
         })
 
@@ -20,6 +22,5 @@ exports.lambdaHandler = async (event, context) => {
         return err;
     }
 
-    return { 'body:': JSON.stringify(result) }
+    return { statusCode: 200, body: JSON.stringify(result) }
 };
-
